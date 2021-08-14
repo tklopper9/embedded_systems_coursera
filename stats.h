@@ -9,32 +9,111 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
+ * @file stats.h
  * @brief <Add Brief Description Here >
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Tanja Klopper
+ * @date 08/2021
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
+int main();
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief The statistics are printed to the screen.
+ *
+ * Call all the functions to calculate max, mean, min, median.
+ * For the median, max is first calculated and then sort_array() 
+ * is called.
+ *
+ * @param test: input array
+ * @param SIZE: size of input array
+ *
+ * @return None
+ */
+void print_statistics(unsigned char test[], int SIZE);
+
+/**
+ * @brief The array values are printed to the screen
+ *
+ * Loop through the array and print the values with tabs in between
+ *
+ * @param test: input array
+ * @param SIZE: size of input array
+ *
+ * @return None
+ */
+void print_array(unsigned char test[], int SIZE);
+
+/**
+ * @brief Finds the mean of array
  *
  * <Add Extended Description Here>
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param test: input array
+ * @param SIZE: size of input array
  *
- * @return <Add Return Informaiton here>
+ * @return Stats are printed
  */
+double find_mean(unsigned char test[], int SIZE);
+
+/**
+ * @brief Finds the median of array
+ *
+ * Loop through the sorted array until size/2. 
+ * This is the median value.
+ *
+ * @param sorted: pointer to the sorted array
+ * @param SIZE: size of input array
+ *
+ * @return unsigned char median
+ */
+unsigned char find_median(unsigned char* sorted, int size);
+
+/**
+ * @brief Sorts the array.
+ *
+ * First step: generate a histogram.
+ * Than loop through the histogram from largest to smallest and
+ * store the numbers (bins) in a new array (sorted[]).
+ *
+ * @param sorted: pointer to the sorted array
+ * @param SIZE: size of input array
+ *
+ * @return unsigned char *sorted: pointer to sorted[]
+ */
+unsigned char * sort_array(unsigned char test[], int size, unsigned char max);
+
+/**
+ * @brief Finds the maximum of array
+ * 
+ * Loop to the array, in every iteration compare to the current max.
+ * Store the new max.
+ *
+ * @param test: input array
+ * @param SIZE: size of input array
+ *
+ * @return unsigned char max
+ */
+unsigned char find_maximum(unsigned char test[], int size);
+
+/**
+ * @brief Finds the minimum of array
+ * 
+ * Loop to the array, in every iteration compare to the current min.
+ * Store the new min.
+ *
+ * @param test: input array
+ * @param SIZE: size of input array
+ *
+ * @return unsigned char min
+ */
+unsigned char find_minimum(unsigned char test[], int size);
 
 
 #endif /* __STATS_H__ */
