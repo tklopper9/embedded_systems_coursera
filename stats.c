@@ -30,6 +30,7 @@
 #define SIZE (40)
 
 void print_statistics(unsigned char test[], int size){
+  /* Declare all variables */
   double mean;
   unsigned char max;
   unsigned char median;
@@ -40,6 +41,7 @@ void print_statistics(unsigned char test[], int size){
   sorted = sort_array(test, SIZE, max);
   median = find_median(sorted, SIZE);
   min = find_minimum(test,SIZE);
+  /* Finally print the stats */
   printf("The statistics of the array values are: \n");
   printf("Mean value: %2.2f \n", mean);
   printf("Maximum value: %u \n", max);
@@ -130,6 +132,7 @@ int main() {
   printf("Original array: \n");
   print_array(test, SIZE);
 
+  /* Call print_statistics which calls all the other functions */
   print_statistics(test,SIZE);
 
   return 0;
