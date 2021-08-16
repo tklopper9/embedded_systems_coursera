@@ -117,7 +117,7 @@ double find_mean(unsigned char test[], int size){
   double mean = 0;
   int cl;
   for(cl=0; cl<size; cl++)
-    mean += test[cl]/size;
+    mean += (double)test[cl]/(double)size;
   return mean;
 }
 
