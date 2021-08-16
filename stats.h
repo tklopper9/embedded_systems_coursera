@@ -9,15 +9,18 @@
  *
  *****************************************************************************/
 /**
- * @file stats.h
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Mean, Max, Min and Median statistics
  *
- * <Add Extended Description Here>
+ * This program takes an unsigned char array and calculates 
+ * statistics: mean, maximum, minimum and median value.
+ * The values are sorted and the result is printed.
  *
  * @author Tanja Klopper
  * @date 08/2021
  *
  */
+
 #ifndef __STATS_H__
 #define __STATS_H__
 
@@ -58,7 +61,7 @@ void print_array(unsigned char test[], int SIZE);
  * @param test: input array
  * @param SIZE: size of input array
  *
- * @return Stats are printed
+ * @return double: Mean value
  */
 double find_mean(unsigned char test[], int SIZE);
 
@@ -71,7 +74,7 @@ double find_mean(unsigned char test[], int SIZE);
  * @param sorted: pointer to the sorted array
  * @param SIZE: size of input array
  *
- * @return unsigned char median
+ * @return unsigned char median value
  */
 unsigned char find_median(unsigned char* sorted, int size);
 
